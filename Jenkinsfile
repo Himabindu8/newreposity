@@ -5,4 +5,5 @@ pipeline{
     stage('stage-1){
          bat 'echo 'hello''
           }
+          }
           
