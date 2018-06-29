@@ -1,22 +1,8 @@
-job('DSL-TEST1') {
-    scm {
-        git('git://github.com/quidryan/aws-sdk-test.git')
-    }
-    triggers {
-        scm('H/15 * * * *')
-    }
-    steps {
-        maven('-e clean test')
-    }
-}
-job('DSL-TEST2') {
-    scm {
-        git('git://github.com/quidryan/aws-sdk-test.git')
-    }
-    triggers {
-        scm('H/15 * * * *')
-    }
-    steps {
-        maven('-e clean test')
-    }
-}
+pipeline{
+    agent{
+        label 'Windows'
+       }
+    stage('stage-1){
+         bat 'echo 'hello''
+          }
+          
