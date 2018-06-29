@@ -1,12 +1,22 @@
-node{
-
-   stage('Clone')
-   {
-   chekout scm
-   }
-   stage('Build')
-   {
-   bat 'mvn -s $MAVEN_SETTINGS -B clean deploy cobertura:cobertura javadoc:javadoc'
-   
-   }
-   }
+job('DSL-TEST1') {
+    scm {
+        git('git://github.com/quidryan/aws-sdk-test.git')
+    }
+    triggers {
+        scm('H/15 * * * *')
+    }
+    steps {
+        maven('-e clean test')
+    }
+}
+job('DSL-TEST2') {
+    scm {
+        git('git://github.com/quidryan/aws-sdk-test.git')
+    }
+    triggers {
+        scm('H/15 * * * *')
+    }
+    steps {
+        maven('-e clean test')
+    }
+}
