@@ -3,8 +3,8 @@ pipeline{
         label 'Windows'
        }
     stages{
-    stage('stage-1'){
-         bat 'echo 'hello''
+          stage('hello'){
+              steps{ bat 'echo 'hello''}
           }
           }
 }    
