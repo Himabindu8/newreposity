@@ -5,7 +5,6 @@ import groovy.json.JsonOutput
 
 
 node{
-stages{
  
                stage('Clone')
                  {
