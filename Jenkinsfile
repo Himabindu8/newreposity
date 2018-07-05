@@ -1,14 +1,15 @@
-freeStyleJob('JENKINS_JOB'){ 
-   jdk('java  8')
-          scm {
-        github('jenkinsci/job-dsl-plugin','master')
-        }
-    triggers {
-        scm('H/15 * * * *')
-    }
-    steps {
-        maven('-e clean test')
-       }
+
+
+ 
+import hudson.model.*
+import hudson.EnvVars
+import groovy.json.JsonSlurperClassic
+import groovy.json.JsonBuilder
+import groovy.json.JsonOutput
+import java.net.URL
+
+
+node {
+stage '\u2776 Stage 1'
+echo "Hello"
 }
-
-
